@@ -1,0 +1,32 @@
+{
+  "name": "my-app",
+  "private": true,
+  "packageManager": "npm@11.17.0",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "build": "tsc",
+    "start": "tsx src/main.ts",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "tsx prisma/seed.ts",
+    "compute:deploy": "npx --yes --no-update-notifier @prisma/cli@latest app deploy --prod --yes"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "@nestjs/common": "^11.1.27",
+    "@nestjs/core": "^11.1.27",
+    "@nestjs/platform-express": "^11.1.27",
+    "dotenv": "^17.2.3",
+    "pg": "^8.23.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  },
+  "devDependencies": {
+    "@prisma/compute-sdk": "latest",
+    "@types/node": "^26.0.0",
+    "prisma": "^7.10.1",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  }
+}
